@@ -1,4 +1,5 @@
-<script type="text/javascript">
+
+{/* <script type="text/javascript">
 	try {
 		// Identificador de nuestra propiedad en GA
 		var UA_PROPERTY = "UA-131699429-1";
@@ -57,4 +58,4 @@
 	}
 	catch(e) {}
 
-</script>
+</script> */}
