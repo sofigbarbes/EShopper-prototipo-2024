@@ -1,0 +1,14 @@
+html{
+    color: #bfbfbf !important;
+    background: #1f1f1f !important;
+}
+.tarea{
+    color:white;
+}
+.bt_continuar:hover {
+    background: white;
+    color: black;
+}
+.bt_continuar{
+    color:white;
+}
