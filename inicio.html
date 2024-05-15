@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Inicio | E-Shopper</title>
+
+</head>
+
+<body>
+    <script src="js/jquery.js"></script>
+
+    <script>
+        function getRandomMode(max) {
+            return Math.floor(Math.random() * max);
+        }
+        var mode = getRandomMode(2)
+        if (mode == 0) {
+            window.location.replace('enunciado1.html')
+
+        } else {
+            window.location.replace('enunciado1_dark.html')
+
+        }
+
+    </script>
+    </script>
+</body>
+
+</html>
