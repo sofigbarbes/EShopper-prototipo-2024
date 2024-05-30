@@ -66,6 +66,7 @@ body>.container {
 
 a:-webkit-any-link,
 .productinfo p,
+.product-information p,
 #reviews p {
     color: rgb(201 199 199) !important;
 }
