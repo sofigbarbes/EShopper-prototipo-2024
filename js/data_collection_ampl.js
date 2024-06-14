@@ -10,6 +10,11 @@ var target_click = ''
 var mouse_movements_array = []
 var mouse_clicks_array = []
 
+// guardar momento de inicio si no existe (primera pantalla solo)
+if (!sessionStorage.getItem('fecha_inicio')) {
+  sessionStorage.setItem('fecha_inicio', Date.now())
+}
+
 var raw_data_movement = sessionStorage.getItem('mouse_movements')
 if (raw_data_movement != null) {
   mouse_movements_array = JSON.parse(raw_data_movement) // no brackets
@@ -22,12 +27,9 @@ if (raw_data_click != null) {
 // set target
 window.onmousemove = function (e) {
   mouse_position = [e.pageX, e.pageY]
-  if (e.target.getAttribute('click_type')) {
-    console.log('seeing target movement')
+  if (e.target.getAttribute('click_type') == 'target') {
     target_movement = 'target'
   }else {
-    console.log('seeing void movement')
-
     target_movement = 'void'
   }
   has_mouse_value = true
@@ -35,12 +37,14 @@ window.onmousemove = function (e) {
 
 window.onclick = function (e) {
   m_click_pos = [e.pageX, e.pageY]
-  if (e.target.getAttribute('click_type')) {
+  if (e.target.getAttribute('click_type') == 'target') {
     target_click = 'target'
+  }
+  else if (e.target.getAttribute('click_type') == 'wrong_target') {
+    target_click = 'wrong_target'
   }else {
     target_click = 'void'
   }
-
   var raw_data_click = sessionStorage.getItem('mouse_clicks')
   if (raw_data_click != null) {
     mouse_clicks_array = JSON.parse(raw_data_click) // no brackets
@@ -95,6 +99,20 @@ window.addEventListener('click', () => {
 })
 
 function finish_page_data () {
-  sessionStorage.setItem('gender', document.querySelector('input[checked]').getAttribute('value'))
+  if (sessionStorage.getItem('fecha_inicio')) {
+    var tiempo_total = (Date.now() - parseInt(sessionStorage.getItem('fecha_inicio'))) / 1000
+    sessionStorage.setItem('tiempo_total', tiempo_total)
+  }
+  // /
+  sessionStorage.setItem('gender', document.querySelector('input[name="gender"][checked]').getAttribute('value'))
   sessionStorage.setItem('birthday', document.querySelector('input#start').value)
+  sessionStorage.setItem('q_color_combination', document.querySelector('input[name="color_combination"][checked]').getAttribute('value'))
+  sessionStorage.setItem('q_font_legible', document.querySelector('input[name="font_legible"][checked]').getAttribute('value'))
+  sessionStorage.setItem('q_navigability', document.querySelector('input[name="navigability"][checked]').getAttribute('value'))
+  sessionStorage.setItem('q_reconocibles', document.querySelector('input[name="reconocibles"][checked]').getAttribute('value'))
+  sessionStorage.setItem('q_task1_time', document.querySelector('input[name="task1_time"][checked]').getAttribute('value'))
+  sessionStorage.setItem('q_task2_time', document.querySelector('input[name="task2_time"][checked]').getAttribute('value'))
+  sessionStorage.setItem('q_task3_time', document.querySelector('input[name="task3_time"][checked]').getAttribute('value'))
+  sessionStorage.setItem('q_recommend', document.querySelector('input[name="recommend"][checked]').getAttribute('value'))
+  
 }

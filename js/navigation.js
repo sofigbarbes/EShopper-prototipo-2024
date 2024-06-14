@@ -87,9 +87,19 @@ function page_to_end_light () {
   on_change_page()
   window.location.href = ('final_eshopper.html')
 }
-function finish_test(){
+function finish_test_light(){
   on_change_page()
   finish_page_data();
   submit_data();
-  alert('Puedes cerrar esta ventana. ¡Gracias por ayudarme!')
+  setTimeout(function(){
+    window.location.href = ('thanks.html')
+  },1500)
+}
+function finish_test_dark(){
+  on_change_page()
+  finish_page_data();
+  submit_data();
+  setTimeout(function(){
+    window.location.href = ('thanks_dark.html')
+  }, 1500)
 }
