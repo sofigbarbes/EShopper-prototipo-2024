@@ -91,7 +91,7 @@
                 <div>7: Muy reconocibles</div>
             </div>
             <div>
-                <input type="radio" name="reconocibles value="1"> 1</input>
+                <input type="radio" name="reconocibles value=" 1"> 1</input>
                 <input type="radio" name="reconocibles" value="2"> 2</input>
                 <input type="radio" name="reconocibles" value="3"> 3</input>
                 <input type="radio" name="reconocibles" value="4" checked> 4</input>
@@ -101,7 +101,8 @@
             </div>
         </div>
         <div class="dato_container">
-            <div>En general, estoy satisfecho/a con la cantidad de tiempo que me llevó completar la tarea de <b>búsqueda de un producto</b>.</div>
+            <div>En general, estoy satisfecho/a con la cantidad de tiempo que me llevó completar la tarea de <b>búsqueda
+                    de un producto</b>.</div>
             <div class="valores_preguntas">
                 <div>1: Poco satisfecho/a</div>
                 <div>7: Muy satisfecho/a</div>
@@ -116,7 +117,7 @@
                 <input type="radio" name="task1_time" value="7"> 7</input>
             </div>
         </div>
-        
+
         <div class="dato_container">
             <div>En general, estoy satisfecho/a con la facilidad de <b>acceso al carrito</b> de este sitio web.</div>
             <div class="valores_preguntas">
@@ -134,7 +135,9 @@
             </div>
         </div>
         <div class="dato_container">
-            <div>En general, estoy satisfecho/a con la facilidad de este sitio web en relación con la tarea de <b>eliminación de un elemento del carrito</b></div>
+            <div>En general, estoy satisfecho/a con la facilidad de este sitio web en relación con la tarea de
+                <b>eliminación de un elemento del carrito</b>
+            </div>
             <div class="valores_preguntas">
                 <div>1: Poco satisfecho/a</div>
                 <div>7: Muy satisfecho/a</div>
@@ -149,7 +152,7 @@
                 <input type="radio" name="task3_time" value="7"> 7</input>
             </div>
         </div>
-        
+
         <div class="dato_container">
             <div><b>Recomendaría</b> este sitio web a un amigo/amiga</div>
             <div class="valores_preguntas">
@@ -171,6 +174,22 @@
         </button>
     </div>
     <script src="js/navigation.js"></script>
+    <script id="input_script">
+        console.log('adding code')
+
+        document.addEventListener('click', function (e) {
+            console.log('inside click')
+            if (e.target.tagName == "INPUT") {
+                var inputs = document.querySelectorAll('input[name="' + e.target.getAttribute('name') + '"]')
+                console.log(inputs)
+
+                inputs.forEach((i) => { i.removeAttribute('checked') });
+                e.target.setAttribute('checked', '')
+                console.log('inside if')
+            }
+        })
+
+    </script>
     </script>
 </body>
 
