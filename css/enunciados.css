@@ -38,8 +38,17 @@ html {
 }
 
 .dato_container {
-    padding-bottom: 2em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     gap: 1em;
+    border: 1px solid;
+    border-radius: 8px;
+    width: 90%;
+    margin: 1em 0;
+    max-width: 525px;
+}
+.valores_preguntas{
+    font-size: 12px;
+    line-height: 17px;
 }

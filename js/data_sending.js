@@ -67,13 +67,25 @@ function submit_data () {
 
     current_participant.set('gender', sessionStorage.getItem('gender'))
     current_participant.set('birthday', sessionStorage.getItem('birthday'))
+    current_participant.set('q_color_combination', sessionStorage.getItem('q_color_combination'))
+    current_participant.set('q_font_legible', sessionStorage.getItem('q_font_legible'))
+    current_participant.set('q_navigability', sessionStorage.getItem('q_navigability'))
+    current_participant.set('q_reconocibles', sessionStorage.getItem('q_reconocibles'))
+    current_participant.set('q_task1_time', sessionStorage.getItem('q_task1_time'))
+    current_participant.set('q_task2_time', sessionStorage.getItem('q_task2_time'))
+    current_participant.set('q_task3_time', sessionStorage.getItem('q_task3_time'))
+    current_participant.set('q_recommend', sessionStorage.getItem('q_recommend'))
 
+
+    current_participant.set('total_time', sessionStorage.getItem('tiempo_total'))
     var modo_elemento = document.querySelector("head meta[name='modo']")
     current_participant.set('modo', modo_elemento.getAttribute('content'))
 
     current_participant.save().then(function (participant) {
       console.log('Participant created successfully')
+      console.log(participant)
       console.log('Data submitted')
+      sessionStorage.setItem('participant_ID', participant.id)
     }).catch(function (error) {
       console.log('Error: ' + error.message)
       sessionStorage.removeItem('has_sent')
