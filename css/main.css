@@ -52,11 +52,12 @@ a {
     align-items: flex-start;
     position: relative;
   }
+
   td.cart_delete {
     position: absolute;
     top: 1em;
     right: 2em;
-}
+  }
 }
 
 h1,
@@ -1067,6 +1068,7 @@ h2.title {
   line-height: 1.42857;
   margin-right: 0;
 }
+
 .our_partners {
   overflow: hidden;
 }
