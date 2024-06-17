@@ -1,14 +1,25 @@
-html{
+html {
     color: #bfbfbf !important;
     background: #1f1f1f !important;
 }
-.tarea{
-    color:white;
+
+.tarea {
+    color: white;
 }
+
 .bt_continuar:hover {
     background: white;
     color: black;
 }
-.bt_continuar{
-    color:white;
+
+.bt_continuar {
+    color: white;
+}
+
+.dato_container.error_fill {
+    border: solid 2px #ff8346;
+}
+
+.mensaje_error {
+    color: #ff8346;
 }
