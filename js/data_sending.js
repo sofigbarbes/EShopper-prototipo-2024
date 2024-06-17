@@ -65,6 +65,7 @@ function submit_data () {
     }
     current_participant.set('times', times_array)
 
+    current_participant.set('device', sessionStorage.getItem('device'))
     current_participant.set('gender', sessionStorage.getItem('gender'))
     current_participant.set('birthday', sessionStorage.getItem('birthday'))
     current_participant.set('q_color_combination', sessionStorage.getItem('q_color_combination'))

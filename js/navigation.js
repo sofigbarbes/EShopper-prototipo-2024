@@ -87,19 +87,39 @@ function page_to_end_light () {
   on_change_page()
   window.location.href = ('final_eshopper.html')
 }
-function finish_test_light(){
-  on_change_page()
-  finish_page_data();
-  submit_data();
-  setTimeout(function(){
-    window.location.href = ('thanks.html')
-  },1500)
+function finish_test_light () {
+  if (check_inputs_ok()) {
+    on_change_page()
+    finish_page_data()
+    submit_data()
+    setTimeout(function () {
+      window.location.href = ('thanks.html')
+    }, 1500)
+  }
 }
-function finish_test_dark(){
-  on_change_page()
-  finish_page_data();
-  submit_data();
-  setTimeout(function(){
-    window.location.href = ('thanks_dark.html')
-  }, 1500)
+function finish_test_dark () {
+  if (check_inputs_ok()) {
+    on_change_page()
+    finish_page_data()
+    submit_data()
+    setTimeout(function () {
+      window.location.href = ('thanks_dark.html')
+    }, 1500)
+  }
+}
+function check_inputs_ok () {
+  var containers = document.querySelectorAll('.dato_container')
+  var validation = true
+  containers.forEach((container) => {
+    if (!container.querySelector('input[checked]')) {
+      container.classList.add('error_fill')
+      document.querySelector('.mensaje_error').classList.add('error_fill')
+      validation = false
+    }
+    else{
+      container.classList.remove('error_fill')
+    }
+  })
+
+  return validation
 }

@@ -103,6 +103,12 @@ function finish_page_data () {
     var tiempo_total = (Date.now() - parseInt(sessionStorage.getItem('fecha_inicio'))) / 1000
     sessionStorage.setItem('tiempo_total', tiempo_total)
   }
+
+  if (window.innerWidth <= 920) {
+    sessionStorage.setItem('device', 'mobile')
+  }else {
+    sessionStorage.setItem('device', 'desktop')
+  }
   // /
   sessionStorage.setItem('gender', document.querySelector('input[name="gender"][checked]').getAttribute('value'))
   sessionStorage.setItem('birthday', document.querySelector('input#start').value)
@@ -114,5 +120,4 @@ function finish_page_data () {
   sessionStorage.setItem('q_task2_time', document.querySelector('input[name="task2_time"][checked]').getAttribute('value'))
   sessionStorage.setItem('q_task3_time', document.querySelector('input[name="task3_time"][checked]').getAttribute('value'))
   sessionStorage.setItem('q_recommend', document.querySelector('input[name="recommend"][checked]').getAttribute('value'))
-  
 }
