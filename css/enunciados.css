@@ -10,7 +10,8 @@
     align-items: center;
     color: black;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 25px;
 }
 
 .enunciado_tarea {
@@ -63,4 +64,23 @@ html {
 }
 .mensaje_error.error_fill{
     display: flex;
+}
+.boton_compartir{
+    border: none;
+    background: #21c063;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 1em;
+}
+#share_div{
+    max-width: 525px;
+    padding: 1em;
+    border: 1px solid;
+    border-radius: 8px;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
