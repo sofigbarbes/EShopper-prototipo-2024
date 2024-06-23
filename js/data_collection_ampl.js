@@ -119,5 +119,6 @@ function finish_page_data () {
   sessionStorage.setItem('q_task1_time', document.querySelector('input[name="task1_time"][checked]').getAttribute('value'))
   sessionStorage.setItem('q_task2_time', document.querySelector('input[name="task2_time"][checked]').getAttribute('value'))
   sessionStorage.setItem('q_task3_time', document.querySelector('input[name="task3_time"][checked]').getAttribute('value'))
+  sessionStorage.setItem('q_task4_time', document.querySelector('input[name="task4_time"][checked]').getAttribute('value'))
   sessionStorage.setItem('q_recommend', document.querySelector('input[name="recommend"][checked]').getAttribute('value'))
 }
