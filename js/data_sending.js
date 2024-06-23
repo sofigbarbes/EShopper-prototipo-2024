@@ -75,6 +75,7 @@ function submit_data () {
     current_participant.set('q_task1_time', sessionStorage.getItem('q_task1_time'))
     current_participant.set('q_task2_time', sessionStorage.getItem('q_task2_time'))
     current_participant.set('q_task3_time', sessionStorage.getItem('q_task3_time'))
+    current_participant.set('q_task4_time', sessionStorage.getItem('q_task4_time'))
     current_participant.set('q_recommend', sessionStorage.getItem('q_recommend'))
 
 
